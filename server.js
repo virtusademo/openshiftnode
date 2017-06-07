@@ -1,15 +1,11 @@
-var http = require("http");
-
-http.createServer(function (request, response) {
-
-   // Send the HTTP header 
-   // HTTP Status: 200 : OK
-   // Content Type: text/plain
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   
-   // Send the response body as "Hello World"
-   response.end('Hello Openshift\n');
-}).listen(8081);
-
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081/');
+var http = require('http');
+//loads http module
+var app=http.createServer(function (req, res) {
+//creates server
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  //sets the right header and status code
+  res.end('Hello Openshifttt World\n');
+  //outputs string with line end symbol
+}).listen(8080);
+//sets port and IP address of the server
+console.log('Server running at http://127.0.0.1:1337/');
